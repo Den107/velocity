@@ -3,6 +3,8 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Item from "../components/Item";
 import {Link} from "react-router-dom";
+import CatalogFilter from "../components/CatalogFilter";
+import AsideFilter from "../components/AsideFilter";
 
 const Catalog = () => {
     return (
@@ -22,54 +24,7 @@ const Catalog = () => {
             <section className="catalog">
                 <div className="container">
                     <h2 className="catalog__title">Велосипеды</h2>
-                    <div className="catalog__filter">
-                        <div className="catalog__filter-itemsinner">
-                            <div className="catalog__filter-items mobile-overflow">
-                                <button>Полноприводные</button>
-                                <button>от 5000</button>
-                                <button>BRP</button>
-                                <button>еще</button>
-                            </div>
-                        </div>
-
-                        <div className="catalog__filter-btn">
-                            <select className="filter-style select-item">
-                                <option>По полулярности</option>
-                                <option>По названию</option>
-                                <option>По цене</option>
-                            </select>
-                            <button
-                                className="catalog__filter-btngrid catalog__filter-button catalog__filter-button--active">
-                                <svg width="23" height="21" viewBox="0 0 23 21" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="1" y="1" width="21" height="19" stroke="#2F3035" stroke-width="2"/>
-                                    <rect x="7" y="6" width="2" height="2" fill="#2F3035" stroke="#2F3035"
-                                          stroke-width="2"/>
-                                    <rect x="7" y="13" width="2" height="2" fill="#2F3035" stroke="#2F3035"
-                                          stroke-width="2"/>
-                                    <rect x="14" y="6" width="2" height="2" fill="#2F3035" stroke="#2F3035"
-                                          stroke-width="2"/>
-                                    <rect x="14" y="13" width="2" height="2" fill="#2F3035" stroke="#2F3035"
-                                          stroke-width="2"/>
-                                </svg>
-
-                            </button>
-                            <button className="catalog__filter-btnline catalog__filter-button">
-                                <svg width="25" height="19" viewBox="0 0 25 19" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <g opacity="1">
-                                        <rect x="6" width="19" height="3" rx="1.5" fill="#2F3035"/>
-                                        <rect x="6" y="8" width="19" height="3" rx="1.5" fill="#2F3035"/>
-                                        <rect x="6" y="16" width="19" height="3" rx="1.5" fill="#2F3035"/>
-                                        <rect width="3" height="3" rx="1.5" fill="#2F3035"/>
-                                        <rect y="8" width="3" height="3" rx="1.5" fill="#2F3035"/>
-                                        <rect y="16" width="3" height="3" rx="1.5" fill="#2F3035"/>
-                                    </g>
-                                </svg>
-
-                            </button>
-                        </div>
-                    </div>
+                   <CatalogFilter/>
                     <div className="catalog__inner">
                         <div className="aside__btn">
                             Фильтр
@@ -136,62 +91,62 @@ const Catalog = () => {
                                                            data-max="500000" data-from="150000" data-to="275000"/>
                                                 </div>
                                             </li>
-                                            <li className="aside-filter__item-list">
-                                                <div className="filter__item-list">
-                                                    <p className="filter__item-listtitle">
-                                                        Мощность, л.с.
-                                                    </p>
-                                                    <select className="filter-style filter__item-listselect">
-                                                        <option>130</option>
-                                                        <option>180</option>
-                                                        <option>230</option>
-                                                        <option>300</option>
-                                                    </select>
-                                                </div>
-                                                <div className="filter__item-list">
-                                                    <p className="filter__item-listtitle">
-                                                        Мощность двигателя, л.с.
-                                                    </p>
-                                                    <select className="filter-style filter__item-listselect">
-                                                        <option>130</option>
-                                                        <option>180</option>
-                                                        <option>230</option>
-                                                        <option>300</option>
-                                                    </select>
-                                                </div>
-                                                <div className="filter__item-list">
-                                                    <p className="filter__item-listtitle">
-                                                        Макс. скорость
-                                                    </p>
-                                                    <select className="filter-style filter__item-listselect">
-                                                        <option>130</option>
-                                                        <option>180</option>
-                                                        <option>230</option>
-                                                        <option>300</option>
-                                                    </select>
-                                                </div>
+                                            {/*<li className="aside-filter__item-list">*/}
+                                            {/*    <div className="filter__item-list">*/}
+                                            {/*        <p className="filter__item-listtitle">*/}
+                                            {/*            Мощность, л.с.*/}
+                                            {/*        </p>*/}
+                                            {/*        <select className="filter-style filter__item-listselect">*/}
+                                            {/*            <option>130</option>*/}
+                                            {/*            <option>180</option>*/}
+                                            {/*            <option>230</option>*/}
+                                            {/*            <option>300</option>*/}
+                                            {/*        </select>*/}
+                                            {/*    </div>*/}
+                                            {/*    <div className="filter__item-list">*/}
+                                            {/*        <p className="filter__item-listtitle">*/}
+                                            {/*            Мощность двигателя, л.с.*/}
+                                            {/*        </p>*/}
+                                            {/*        <select className="filter-style filter__item-listselect">*/}
+                                            {/*            <option>130</option>*/}
+                                            {/*            <option>180</option>*/}
+                                            {/*            <option>230</option>*/}
+                                            {/*            <option>300</option>*/}
+                                            {/*        </select>*/}
+                                            {/*    </div>*/}
+                                            {/*    <div className="filter__item-list">*/}
+                                            {/*        <p className="filter__item-listtitle">*/}
+                                            {/*            Макс. скорость*/}
+                                            {/*        </p>*/}
+                                            {/*        <select className="filter-style filter__item-listselect">*/}
+                                            {/*            <option>130</option>*/}
+                                            {/*            <option>180</option>*/}
+                                            {/*            <option>230</option>*/}
+                                            {/*            <option>300</option>*/}
+                                            {/*        </select>*/}
+                                            {/*    </div>*/}
 
-                                            </li>
-
+                                            {/*</li>*/}
+<br/>
                                             <li className="aside-filter__item-drop">
                                                 <p className="aside-filter__item-title filter__item-drop filter__item-drop--active">Бренд</p>
                                                 <div className="aside-filter__content">
                                                     <div className="aside-filter__content-box">
                                                         <label className="aside-filter__content-label">
                                                             <input className="filter-style" type="checkbox" checked/>
-                                                            BRP
+                                                            GT
                                                         </label>
                                                     </div>
                                                     <div className="aside-filter__content-box">
                                                         <label className="aside-filter__content-label">
                                                             <input className="filter-style" type="checkbox" checked/>
-                                                            Spark 2
+                                                            Stels
                                                         </label>
                                                     </div>
                                                     <div className="aside-filter__content-box">
                                                         <label className="aside-filter__content-label">
                                                             <input className="filter-style" type="checkbox"/>
-                                                            Spark 3
+                                                            Cannondale
                                                         </label>
                                                     </div>
                                                     <div className="filter-more">
@@ -208,25 +163,25 @@ const Catalog = () => {
                                                     <div className="aside-filter__content-box">
                                                         <label className="aside-filter__content-label">
                                                             <input className="filter-style" type="checkbox" checked/>
-                                                            Sea-doo Spark 2
+                                                            GT Avalanche 3.0
                                                         </label>
                                                     </div>
                                                     <div className="aside-filter__content-box">
                                                         <label className="aside-filter__content-label">
                                                             <input className="filter-style" type="checkbox" checked/>
-                                                            SeaDoo Spark 90
+                                                            GT Avalanche 2.0
                                                         </label>
                                                     </div>
                                                     <div className="aside-filter__content-box">
                                                         <label className="aside-filter__content-label">
                                                             <input className="filter-style" type="checkbox"/>
-                                                            SeaDoo GTI 155
+                                                            Merida Big Nine 100
                                                         </label>
                                                     </div>
                                                     <div className="aside-filter__content-box">
                                                         <label className="aside-filter__content-label">
                                                             <input className="filter-style" type="checkbox"/>
-                                                            SeaDoo GTR 230
+                                                            Merida Big Nine 200
                                                         </label>
                                                     </div>
                                                     <div className="filter-more">
@@ -315,6 +270,7 @@ const Catalog = () => {
                             </div>
                         </aside>
                         <div className="catalog__inner-list">
+                            <Item/>
                             <Item/>
                             <Item/>
                             <Item/>
