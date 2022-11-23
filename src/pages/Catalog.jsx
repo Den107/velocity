@@ -1,6 +1,8 @@
 import React, {Fragment} from 'react';
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Item from "../components/Item";
+import {Link} from "react-router-dom";
 
 const Catalog = () => {
     return (
@@ -10,8 +12,8 @@ const Catalog = () => {
                 <div className="container">
                     <div className="breadcrumbs__inner">
                         <ul className="breadcrumbs__list mobile-overflow">
-                            <li className="breadcrumbs__list-item"><a href="index.html">Главная</a></li>
-                            <li className="breadcrumbs__list-item"><span>Гидроциклы</span></li>
+                            <li className="breadcrumbs__list-item"><Link to="/">Главная</Link></li>
+                            <li className="breadcrumbs__list-item"><span>Велосипеды</span></li>
                         </ul>
                     </div>
                 </div>
@@ -19,7 +21,7 @@ const Catalog = () => {
 
             <section className="catalog">
                 <div className="container">
-                    <h2 className="catalog__title">Гидроциклы</h2>
+                    <h2 className="catalog__title">Велосипеды</h2>
                     <div className="catalog__filter">
                         <div className="catalog__filter-itemsinner">
                             <div className="catalog__filter-items mobile-overflow">
@@ -313,218 +315,50 @@ const Catalog = () => {
                             </div>
                         </aside>
                         <div className="catalog__inner-list">
-                            <div className="product-item__wrapper">
-                                <button className="product-item__favorite">
-                                </button>
-                                <button className="product-item__bascket">
-                                    <img src="assets/images/bascket-icon-white.svg" alt="bascket"/>
-                                </button>
-                                <a className="product-item__notify-link" href="#"> <span>Сообщить о поступлении</span>
-                                </a>
-                                <a className="product-item" href="product-page.html">
-                                    <p className="product-item__hover-text">посмотреть товар</p>
-                                    <img className="product-item__img" src="assets/images/content/gydro-1.png" alt="prod"/>
-                                    <h4 className="product-item__title">Гидроцикл BRP SeaDoo GTI 130hp SE
-                                        Black\Mango
-                                    </h4>
-                                    <p className="price product-item__price">1 049 500 ₽</p>
-                                    <p className="product-item__notify-text">нет в наличии</p>
-                                </a>
-                            </div>
-                            <div className="product-item__wrapper">
-                                <button className="product-item__favorite">
-                                </button>
-                                <button className="product-item__bascket">
-                                    <img src="assets/images/bascket-icon-white.svg" alt="bascket"/>
-                                </button>
-                                <a className="product-item__notify-link" href="#"> <span>Сообщить о поступлении</span>
-                                </a>
-                                <a className="product-item product-item--sale" href="#">
-                                    <p className="product-item__hover-text">посмотреть товар</p>
-                                    <img className="product-item__img" src="assets/images/content/gydro-2.png" alt="prod"/>
-                                    <h4 className="product-item__title">Гидроцикл BRP SeaDoo GTI 155hp SE Long Blue
-                                        Metallic
-                                    </h4>
-                                    <p className="price product-item__price">1 100 475 ₽</p>
-                                    <p className="product-item__notify-text">нет в наличии</p>
-                                </a>
-                            </div>
-                            <div className="product-item__wrapper">
-                                <button className="product-item__favorite">
-                                </button>
-                                <button className="product-item__bascket">
-                                    <img src="assets/images/bascket-icon-white.svg" alt="bascket"/>
-                                </button>
-                                <a className="product-item__notify-link" href="#"> <span>Сообщить о поступлении</span>
-                                </a>
-                                <a className="product-item" href="#">
-                                    <p className="product-item__hover-text">посмотреть товар</p>
-                                    <img className="product-item__img" src="assets/images/content/gydro-3.png" alt="prod"/>
-                                    <h4 className="product-item__title">Гидроцикл BRP SeaDoo GTR 230hp X California
-                                        green
-                                    </h4>
-                                    <p className="price product-item__price">1 323 700 ₽</p>
-                                    <p className="product-item__notify-text">нет в наличии</p>
-                                </a>
-                            </div>
-                            <div className="product-item__wrapper product-item__not-available">
-                                <button className="product-item__favorite">
-                                </button>
-                                <button className="product-item__bascket">
-                                    <img src="assets/images/bascket-icon-white.svg" alt="bascket"/>
-                                </button>
-                                <a className="product-item__notify-link" href="#"> <span>Сообщить о поступлении</span>
-                                </a>
-                                <a className="product-item product-item--sale" href="#">
-                                    <p className="product-item__hover-text">посмотреть товар</p>
-                                    <img className="product-item__img" src="assets/images/content/gydro-4.png" alt="prod"/>
-                                    <h4 className="product-item__title">Гидроцикл BRP SeaDoo GTR 230hp STD Black /
-                                        Gulfstream
-                                    </h4>
-                                    <p className="price product-item__price">1 049 500 ₽</p>
-                                    <p className="product-item__notify-text">нет в наличии</p>
-                                </a>
-                            </div>
-                            <div className="product-item__wrapper">
-                                <button className="product-item__favorite">
-                                </button>
-                                <button className="product-item__bascket">
-                                    <img src="assets/images/bascket-icon-white.svg" alt="bascket"/>
-                                </button>
-                                <a className="product-item__notify-link" href="#"> <span>Сообщить о поступлении</span>
-                                </a>
-                                <a className="product-item" href="#">
-                                    <p className="product-item__hover-text">посмотреть товар</p>
-                                    <img className="product-item__img" src="assets/images/content/gydro-5.png" alt="prod"/>
-                                    <h4 className="product-item__title">Гидроцикл BRP SeaDoo GTX 300hp LTD Liquid
-                                        Metal
-                                    </h4>
-                                    <p className="price product-item__price">1 543 000 ₽</p>
-                                    <p className="product-item__notify-text">нет в наличии</p>
-                                </a>
-                            </div>
-                            <div className="product-item__wrapper">
-                                <button className="product-item__favorite">
-                                </button>
-                                <button className="product-item__bascket">
-                                    <img src="assets/images/bascket-icon-white.svg" alt="bascket"/>
-                                </button>
-                                <a className="product-item__notify-link" href="#"> <span>Сообщить о поступлении</span>
-                                </a>
-                                <a className="product-item product-item--sale" href="#">
-                                    <p className="product-item__hover-text">посмотреть товар</p>
-                                    <img className="product-item__img" src="assets/images/content/gydro-6.png" alt="prod"/>
-                                    <h4 className="product-item__title">Гидроцикл BRP SeaDoo Spark 60hp 2 up
-                                    </h4>
-                                    <p className="price product-item__price">732 345 ₽</p>
-                                    <p className="product-item__notify-text">нет в наличии</p>
-                                </a>
-                            </div>
-                            <div className="product-item__wrapper">
-                                <button className="product-item__favorite">
-                                </button>
-                                <button className="product-item__bascket">
-                                    <img src="assets/images/bascket-icon-white.svg" alt="bascket"/>
-                                </button>
-                                <a className="product-item__notify-link" href="#"> <span>Сообщить о поступлении</span>
-                                </a>
-                                <a className="product-item" href="#">
-                                    <p className="product-item__hover-text">посмотреть товар</p>
-                                    <img className="product-item__img" src="assets/images/content/gydro-7.png" alt="prod"/>
-                                    <h4 className="product-item__title">Гидроцикл BRP SeaDoo Spark GTS 90hp Rental
-                                    </h4>
-                                    <p className="price product-item__price">857 666 ₽</p>
-                                    <p className="product-item__notify-text">нет в наличии</p>
-                                </a>
-                            </div>
-                            <div className="product-item__wrapper">
-                                <button className="product-item__favorite">
-                                </button>
-                                <button className="product-item__bascket">
-                                    <img src="assets/images/bascket-icon-white.svg" alt="bascket"/>
-                                </button>
-                                <a className="product-item__notify-link" href="#"> <span>Сообщить о поступлении</span>
-                                </a>
-                                <a className="product-item product-item--sale" href="#">
-                                    <p className="product-item__hover-text">посмотреть товар</p>
-                                    <img className="product-item__img" src="assets/images/content/gydro-8.png" alt="prod"/>
-                                    <h4 className="product-item__title">Гидроцикл BRP SeaDoo WAKE 230hp PRO Teal
-                                        blue
-                                    </h4>
-                                    <p className="price product-item__price">1 229 711 ₽</p>
-                                    <p className="product-item__notify-text">нет в наличии</p>
-                                </a>
-                            </div>
-                            <div className="product-item__wrapper">
-                                <button className="product-item__favorite">
-                                </button>
-                                <button className="product-item__bascket">
-                                    <img src="assets/images/bascket-icon-white.svg" alt="bascket"/>
-                                </button>
-                                <a className="product-item__notify-link" href="#"> <span>Сообщить о поступлении</span>
-                                </a>
-                                <a className="product-item" href="#">
-                                    <p className="product-item__hover-text">посмотреть товар</p>
-                                    <img className="product-item__img" src="assets/images/content/gydro-9.png" alt="prod"/>
-                                    <h4 className="product-item__title">Гидроцикл Spark 2-UP 900 Ho Ace Chili Pepper
-                                    </h4>
-                                    <p className="price product-item__price">587 440 ₽</p>
-                                    <p className="product-item__notify-text">нет в наличии</p>
-                                </a>
-                            </div>
-                            <div className="product-item__wrapper">
-                                <button className="product-item__favorite">
-                                </button>
-                                <button className="product-item__bascket">
-                                    <img src="assets/images/bascket-icon-white.svg" alt="bascket"/>
-                                </button>
-                                <a className="product-item__notify-link" href="#"> <span>Сообщить о поступлении</span>
-                                </a>
-                                <a className="product-item product-item--sale" href="#">
-                                    <p className="product-item__hover-text">посмотреть товар</p>
-                                    <img className="product-item__img" src="assets/images/content/gydro-10.png" alt="prod"/>
-                                    <h4 className="product-item__title">Гидроцикл Spark 2-UP 900 Ho Ace Pineapple
-                                    </h4>
-                                    <p className="price product-item__price">587 440 ₽</p>
-                                    <p className="product-item__notify-text">нет в наличии</p>
-                                </a>
-                            </div>
-                            <div className="product-item__wrapper product-item__not-available">
-                                <button className="product-item__favorite">
-                                </button>
-                                <button className="product-item__bascket">
-                                    <img src="assets/images/bascket-icon-white.svg" alt="bascket"/>
-                                </button>
-                                <a className="product-item__notify-link" href="#"> <span>Сообщить о поступлении</span>
-                                </a>
-                                <a className="product-item" href="#">
-                                    <p className="product-item__hover-text">посмотреть товар</p>
-                                    <img className="product-item__img" src="assets/images/content/gydro-11.png" alt="prod"/>
-                                    <h4 className="product-item__title">Гидроцикл BRP Sea-doo Spark 2-UP 900 Ace
-                                        Vanilla
-                                    </h4>
-                                    <p className="price product-item__price">1 049 500 ₽</p>
-                                    <p className="product-item__notify-text">нет в наличии</p>
-                                </a>
-                            </div>
-                            <div className="product-item__wrapper product-item__not-available">
-                                <button className="product-item__favorite">
-                                </button>
-                                <button className="product-item__bascket">
-                                    <img src="assets/images/bascket-icon-white.svg" alt="bascket"/>
-                                </button>
-                                <a className="product-item__notify-link" href="#"> <span>Сообщить о поступлении</span>
-                                </a>
-                                <a className="product-item product-item--sale" href="#">
-                                    <p className="product-item__hover-text">посмотреть товар</p>
-                                    <img className="product-item__img" src="assets/images/content/gydro-12.png" alt="prod"/>
-                                    <h4 className="product-item__title">Гидроцикл Spark 3-UP 900 HO Ace IBR
-                                        Blueberry
-                                    </h4>
-                                    <p className="price product-item__price">1 049 500 ₽</p>
-                                    <p className="product-item__notify-text">нет в наличии</p>
-                                </a>
-                            </div>
+                            <Item/>
+                            <Item/>
+                            <Item/>
+                            <Item/>
+                            <Item/>
+                            <Item/>
+                            <Item/>
+                            <Item/>
+                            {/*<div className="product-item__wrapper product-item__not-available">*/}
+                            {/*    <button className="product-item__favorite">*/}
+                            {/*    </button>*/}
+                            {/*    <button className="product-item__bascket">*/}
+                            {/*        <img src="assets/images/bascket-icon-white.svg" alt="bascket"/>*/}
+                            {/*    </button>*/}
+                            {/*    <a className="product-item__notify-link" href="#"> <span>Сообщить о поступлении</span>*/}
+                            {/*    </a>*/}
+                            {/*    <a className="product-item" href="#">*/}
+                            {/*        <p className="product-item__hover-text">посмотреть товар</p>*/}
+                            {/*        <img className="product-item__img" src="assets/images/content/gydro-11.png" alt="prod"/>*/}
+                            {/*        <h4 className="product-item__title">Гидроцикл BRP Sea-doo Spark 2-UP 900 Ace*/}
+                            {/*            Vanilla*/}
+                            {/*        </h4>*/}
+                            {/*        <p className="price product-item__price">1 049 500 ₽</p>*/}
+                            {/*        <p className="product-item__notify-text">нет в наличии</p>*/}
+                            {/*    </a>*/}
+                            {/*</div>*/}
+                            {/*<div className="product-item__wrapper product-item__not-available">*/}
+                            {/*    <button className="product-item__favorite">*/}
+                            {/*    </button>*/}
+                            {/*    <button className="product-item__bascket">*/}
+                            {/*        <img src="assets/images/bascket-icon-white.svg" alt="bascket"/>*/}
+                            {/*    </button>*/}
+                            {/*    <a className="product-item__notify-link" href="#"> <span>Сообщить о поступлении</span>*/}
+                            {/*    </a>*/}
+                            {/*    <a className="product-item product-item--sale" href="#">*/}
+                            {/*        <p className="product-item__hover-text">посмотреть товар</p>*/}
+                            {/*        <img className="product-item__img" src="assets/images/content/gydro-12.png" alt="prod"/>*/}
+                            {/*        <h4 className="product-item__title">Гидроцикл Spark 3-UP 900 HO Ace IBR*/}
+                            {/*            Blueberry*/}
+                            {/*        </h4>*/}
+                            {/*        <p className="price product-item__price">1 049 500 ₽</p>*/}
+                            {/*        <p className="product-item__notify-text">нет в наличии</p>*/}
+                            {/*    </a>*/}
+                            {/*</div>*/}
                             <div className="pagination">
                                 <ul className="pagination-list">
                                     <li className="pagination-list__item active"><a href="#">1</a></li>
