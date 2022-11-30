@@ -135,7 +135,7 @@ const Header = () => {
                     <div className="header__bottom-inner">
                         <ul className="menu-categories">
                             <li className="menu-categories__item"><Link className="menu-categories__link"
-                                                                     to="catalog">Велосипеды</Link></li>
+                                                                     to="/catalog">Велосипеды</Link></li>
                             <li className="menu-categories__item"><a className="menu-categories__link"
                                                                      href="#">Аксессуары</a></li>
                             <li className="menu-categories__item"><a className="menu-categories__link"
