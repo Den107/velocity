@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Item from "../components/Item";
@@ -7,6 +7,17 @@ import CatalogFilter from "../components/CatalogFilter";
 import AsideFilter from "../components/AsideFilter";
 
 const Catalog = () => {
+
+    const [items, setItems]=useState([])
+
+    useEffect(()=>{
+        fetch('http://localhost:4444/velos')
+            .then(data=>data.json())
+            // .then(data=>console.log(data))
+            .then(items=>setItems(items))
+    }, [])
+
+
     return (
         <Fragment>
             <Header/>
@@ -270,15 +281,16 @@ const Catalog = () => {
                             </div>
                         </aside>
                         <div className="catalog__inner-list">
-                            <Item/>
-                            <Item/>
-                            <Item/>
-                            <Item/>
-                            <Item/>
-                            <Item/>
-                            <Item/>
-                            <Item/>
-                            <Item/>
+                            {/*<Item/>*/}
+                            {/*<Item/>*/}
+                            {/*<Item/>*/}
+                            {/*<Item/>*/}
+                            {/*<Item/>*/}
+                            {/*<Item/>*/}
+                            {/*<Item/>*/}
+                            {/*<Item/>*/}
+                            {/*<Item/>*/}
+                            {items.map((item, i)=><Item key={i} {...item}/>)}
                             {/*<div className="product-item__wrapper product-item__not-available">*/}
                             {/*    <button className="product-item__favorite">*/}
                             {/*    </button>*/}

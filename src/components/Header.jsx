@@ -33,10 +33,10 @@ const Header = () => {
                                     <a className="user-list__link" href="#"><img src="assets/images/user-icon.svg" alt="user"/></a>
                                 </li>
                                 <li className="user-list__item">
-                                    <a className="user-list__link bascket" href="#"><img src="assets/images/bascket-icon.svg"
+                                    <Link className="user-list__link bascket" to={'/cart'}><img src="assets/images/bascket-icon.svg"
                                                                                          alt="bascket"/>
                                         <p className="bascket__num">1</p>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>

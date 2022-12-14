@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 
-const Item = () => {
+const Item = ({title, price, img}) => {
     return (
         <div className="product-item__wrapper">
             <button className="product-item__favorite">
@@ -13,10 +13,10 @@ const Item = () => {
             </a>
             <Link className="product-item" to="/product">
                 <p className="product-item__hover-text">посмотреть товар</p>
-                <img className="product-item__img" src="assets/images/content/Bicycle1.png" alt="prod"/>
-                <h4 className="product-item__title">Велосипед GT
+                <img className="product-item__img" src={img} alt="prod"/>
+                <h4 className="product-item__title">{title}
                 </h4>
-                <p className="price product-item__price">49 500 ₽</p>
+                <p className="price product-item__price">{price} ₽</p>
                 <p className="product-item__notify-text">нет в наличии</p>
             </Link>
         </div>

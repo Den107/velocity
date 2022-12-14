@@ -1,0 +1,48 @@
+[
+  {
+    "title": "Велосипед GT",
+    "price": "49 500",
+    "img": "/assets/images/content/Bicycle1.png"
+  },
+  {
+    "title": "Велосипед Merida 2022 Big.Seven Limited 2.0 27.5\" Р:L(19\") Green/Black",
+    "price": "45 980",
+    "img": "/assets/images/content/Bicycle2.webp"
+  },
+  {
+    "title": "Велосипед Titan Racing Drone Dash MattBlack/GlossBlack",
+    "price": "92 225",
+    "img": "/assets/images/content/Bicycle3.webp"
+  },
+  {
+    "title": "Велосипед STELS Pilot-650 20\" V010 Синий",
+    "price": "26 180",
+    "img": "/assets/images/content/Bicycle4.webp"
+  },
+  {
+    "title": "Велосипед  Merida Speeder GT-R (80) К:700C",
+    "price": "41 900",
+    "img": "/assets/images/content/Bicycle5.webp"
+  },
+  {
+    "title": "Велосипед Trek 2021 FX 1  Lithium Grey M",
+    "price": "39 200",
+    "img": "/assets/images/content/Bicycle6.webp"
+  },
+  {
+    "title": "Велосипед STELS Navigator-620 D 26\" V010 Антрацитовый",
+    "price": "24 520",
+    "img": "/assets/images/content/Bicycle7.webp"
+  },
+  {
+    "title": "Надувной прыгун-каталка Micro Air Hopper розовый",
+    "price": "5 700",
+    "img": "/assets/images/content/Bicycle8.webp"
+  },
+  {
+    "title": "Велосипед STELS Pilot-810 26\" Z010 19\" Синий (LU093334)",
+    "price": "10 300",
+    "img": "/assets/images/content/Bicycle9.webp"
+  }
+]
+
