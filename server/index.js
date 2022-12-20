@@ -6,7 +6,7 @@ const {veloCreateValidator} = require('./validations/velo')
 
 const checkAuth = require('./utils/checkAuth')
 const {register, login, getMe} = require('./controllers/UserController')
-const {createVelo} = require('./controllers/VelosController')
+const {createVelo, getAllVelos, getOneVelos, deleteOneVelo, updateOneVelo} = require('./controllers/VelosController')
 
 async function connectToDB() {
     await mongoose.connect('mongodb://localhost:27017/velocity')
@@ -26,20 +26,20 @@ app.get('/', (req, res) => {
     res.send('Lalala')
 })
 
-app.get('/velos', (req, res) => {
-
-    res.sendFile(__dirname + '/velos.json')
-})
+// app.get('/velos', (req, res) => {
+//
+//     res.sendFile(__dirname + '/velos.json')
+// })
 
 app.post('/auth/login', login)
 app.post('/auth/register', registerValidator, register) //прогоняем сначала запрос через валидатор
 app.get('/auth/me', checkAuth, getMe) //прогоняем запрос через мидлвар
 
-// app.get('/velos', getAllVelos)// получить все велосипеды
-// app.get('/velos/:id', getOneVelos) // получить один велосипед
+app.get('/velos', getAllVelos)// получить все велосипеды
+app.get('/velos/:id', getOneVelos) // получить один велосипед
 app.post('/velos',veloCreateValidator, createVelo) //добавляем новый велосипед
-// app.delete('/velos/:id', deleteOneVelo) // удалить один велосипед
-// app.patch('/velos/:id', updateOneVelo) // обновить один велосипед
+app.delete('/velos/:id', deleteOneVelo) // удалить один велосипед
+app.patch('/velos/:id', updateOneVelo) // обновить один велосипед
 
 app.listen(4444, (err) => {
     if (err) {
