@@ -11,7 +11,6 @@ module.exports.register = async (req, res) => {
         const passwordHash = await bcrypt.hash(password, salt) //шифруем пароль
 
         const doc = new UserModel({
-            email: req.body.email,
             password: passwordHash,
             login: req.body.login
         })

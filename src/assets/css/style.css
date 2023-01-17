@@ -500,11 +500,14 @@ body {
   background-color: #1c62cd;
   border-radius: 10px 0px 0px 0px;
   border: none;
-  bottom: 0;
+  bottom: 113px;
   right: 0;
   padding-top: 7px;
   cursor: pointer;
   z-index: 10;
+}
+.product-item__bascket img{
+  margin: auto;
 }
 .product-item__hover-text {
   padding: 18px 21px;
@@ -514,6 +517,7 @@ body {
   display: inline-block;
   position: absolute;
   top: 30%;
+  right: 10%;
   opacity: 0;
   transition: all 0.3s;
 }
@@ -568,7 +572,7 @@ body {
   text-align: center;
   color: #1c62cd;
   text-align: center;
-  bottom: 20px;
+  bottom: 0;
   left: 0;
   right: 0;
   font-size: 16px;

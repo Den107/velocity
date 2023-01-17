@@ -30,7 +30,7 @@ const Header = () => {
                                                                                  alt="fav"/></a>
                                 </li>
                                 <li className="user-list__item">
-                                    <a className="user-list__link" href="#"><img src="assets/images/user-icon.svg" alt="user"/></a>
+                                    <Link className="user-list__link" to={'/login'}><img src="assets/images/user-icon.svg" alt="user"/></Link>
                                 </li>
                                 <li className="user-list__item">
                                     <Link className="user-list__link bascket" to={'/cart'}><img src="assets/images/bascket-icon.svg"
