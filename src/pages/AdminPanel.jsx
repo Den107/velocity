@@ -6,6 +6,8 @@ import '../index.css'
 import ItemForAdmin from "../components/ItemForAdmin";
 
 const AdminPanel = () => {
+    const [modal, setModal] = useState(false)
+
 
     function selectCategory(e) {
         const categories = document.querySelectorAll('#cat')
@@ -38,11 +40,37 @@ const AdminPanel = () => {
 
     return (
         <div className={'relative'}>
+            {modal && (<div className={'h-[100vh] w-full fixed left-auto right-auto z-[11] flex justify-center items-center modal'}>
+                <form onClick={e => e.preventDefault()} className={'w-[300px] bg-white p-3'}>
+                    <h2 className={'text-center p-2'}>Добавить велосипед</h2>
+                    <label className={'p-2 text-sm text-black mt-2'}>
+                        Название велосипеда
+                        <input className={'w-full p-2 outline-0 bg-blue-100 rounded text-black'} type="text"
+                               placeholder={'Название...'}/>
+                    </label>
+                    <label className={'p-2 text-sm text-black mt-2'}>
+                        Цена
+                        <input className={'w-full p-2 outline-0 bg-blue-100 rounded text-black'} type="text"
+                               placeholder={'Цена...'}/>
+                    </label>
+                    <label className={'p-2 text-sm text-black mt-2'}>
+                        Картинка
+                        <input className={'w-full p-2 outline-0 bg-blue-100 rounded text-black'} type="text"
+                               placeholder={'Картинка...'}/>
+                    </label>
+                    <div className={'flex justify-between mt-3 mb-1'}>
+                        <button className={'rounded bg-green-700 p-2 text-white text-xs'} type="submit">Добавить
+                        </button>
+                        <button onClick={()=>setModal(false)} className={'rounded bg-red-700 p-2 text-white text-xs'}>Закрыть</button>
+                    </div>
+                </form>
+            </div>)}
+
             <Link className={'fixed top-3 right-3 rounded bg-blue-400 p-2 text-gray-100'} to={'/'}>Выйти</Link>
             <aside className={'w-1/4 p-4 bg-blue-500 fixed h-[100vh]'}>
                 <ul>
                     <li onClick={(e) => selectCategory(e)} id={'cat'}
-                        className={'text-gray-100 p-5 cursor-pointer hover:bg-blue-600'}
+                        className={'text-gray-100 p-5 cursor-pointer hover:bg-blue-600 active'}
                         data-cat={'Велосипеды'}>Велосипеды
                     </li>
                     <li onClick={(e) => selectCategory(e)} id={'cat'}
@@ -67,8 +95,11 @@ const AdminPanel = () => {
                 </ul>
             </aside>
             <main className={'w-3/4 ml-[25%] p-4'}>
-                <section data-cat={'Велосипеды'} className={'hidden flex-wrap gap-20'}>
+                <section data-cat={'Велосипеды'} className={'flex flex-wrap gap-20'}>
                     {items.map((item, i) => <ItemForAdmin key={i} {...item}/>)}
+                    <div className={'my-2 flex justify-center items-center w-full'}>
+                        <button onClick={()=>setModal(true)} className={'p-2 rounded bg-blue-300'}>Добавить велосипед</button>
+                    </div>
                 </section>
                 <section data-cat={'Аксессуары'} className={'hidden flex-wrap gap-20'}>
                     2

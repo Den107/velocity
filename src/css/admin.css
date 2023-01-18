@@ -1,3 +1,8 @@
 .active{
     background-color: rgb(37 99 235)
 }
+
+.modal{
+    overflow: hidden;
+    background: rgba(0,0,0,0.5);
+}
