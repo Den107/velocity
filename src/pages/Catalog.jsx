@@ -290,7 +290,7 @@ const Catalog = () => {
                             {/*<Item/>*/}
                             {/*<Item/>*/}
                             {/*<Item/>*/}
-                            {items.map((item, i)=><Item key={i} {...item}/>)}
+                            {items.map((item)=><Item key={item._id} {...item}/>)}
                             {/*<div className="product-item__wrapper product-item__not-available">*/}
                             {/*    <button className="product-item__favorite">*/}
                             {/*    </button>*/}

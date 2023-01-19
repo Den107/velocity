@@ -1,10 +1,26 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import BuyWithThis from "../components/BuyWithThis";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
+import axios from "axios";
 
 const ProductPage = () => {
+    const params = useParams()
+    const [title, setTitle] = useState('')
+    const [price, setPrice] = useState('')
+    const [imageUrl, setImageUrl] = useState('')
+
+    useEffect(()=>{
+        const id = params.id
+        axios.get(`http://localhost:4444/velos/${id}`)
+            .then(resp=>{
+                setTitle(resp.data.title)
+                setPrice(resp.data.price)
+                setImageUrl(resp.data.imageUrl)
+            })
+    }, [])
+
     return (
         <Fragment>
             <Header/>
@@ -26,24 +42,24 @@ const ProductPage = () => {
                 <div className="container">
                     <div className="product-card__inner">
                         <div className="product-card__img-box product-item--sale">
-                            <img className="product-card__img" src="assets/images/content/Bicycle1.png" alt="product-card"/>
+                            <img className="product-card__img" src={imageUrl} alt="product-card"/>
                                 <p className="product-card__price-old">50 000 ₽</p>
-                                <p className="product-card__price-new">45 000 ₽</p>
+                                <p className="product-card__price-new">{price} ₽</p>
                                 <a className="product-card__link" href="#">Нашли дешевле? Снизим цену!</a>
                                 <div className="product-card__btn product-card__btn-mobile">
                                     <button>Купить</button>
                                 </div>
                         </div>
                         <div className="product-card__content">
-                            <h1 className="product-card__title">Велосипед GT</h1>
+                            <h1 className="product-card__title">{title}</h1>
                             <p className="product-card__code">Код товара: 366666-2 </p>
                             <div className="product-card__buttons">
-                                <a className="product-card__icon-favorite" href="#">
-                                    <img src="assets/images/favorite.svg" alt="favorite"/>
-                                </a>
-                                <a className="product-card__icon-comparsion" href="#">
-                                    <img src="assets/images/comperson.svg" alt="comp"/>
-                                </a>
+                                {/*<a className="product-card__icon-favorite" href="#">*/}
+                                {/*    <img src="assets/images/favorite.svg" alt="favorite"/>*/}
+                                {/*</a>*/}
+                                {/*<a className="product-card__icon-comparsion" href="#">*/}
+                                {/*    <img src="assets/images/comperson.svg" alt="comp"/>*/}
+                                {/*</a>*/}
                                 <a className="rate" href="#">
                                     <div className="rate-yo" data-rateyo-rating="4"></div>
                                 </a>
@@ -52,7 +68,7 @@ const ProductPage = () => {
                                 <div className="tabs">
                                     <a className="tab product-card__tab tab--active"
                                        href="#product-1">Характеристики</a>
-                                    <a className="tab product-card__tab" href="#product-2">Наличие в магазине</a>
+                                    {/*<a className="tab product-card__tab" href="#product-2">Наличие в магазине</a>*/}
                                 </div>
                                 <div className="tabs-container">
                                     <div id="product-1"

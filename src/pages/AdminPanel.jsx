@@ -4,10 +4,65 @@ import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import '../index.css'
 import ItemForAdmin from "../components/ItemForAdmin";
+import axios from "axios";
 
 const AdminPanel = () => {
-    const [modal, setModal] = useState(false)
+    const [items, setItems] = useState([])
+    const [modalForAdd, setModalForAdd] = useState(false)
+    const [modalForUpdate, setModalForUpdate] = useState(false)
+    const [title, setTitle] = useState('')
+    const [price, setPrice] = useState('')
+    const [imageUrl, setImageUrl] = useState('')
+    const [titleForUpdate, setTitleForUpdate] = useState('')
+    const [priceForUpdate, setPriceForUpdate] = useState('')
+    const [imageUrlForUpdate, setImageUrlForUpdate] = useState('')
+    const [update, setUpdate] = useState(false)
 
+    function submitHandler() {
+        try {
+            setUpdate(false)
+            axios.post('http://localhost:4444/velos', {
+                title, price, imageUrl
+            }).then(response => response.data)
+            setModalForAdd(false)
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+
+
+    function deleteVelo(_id) {
+        setUpdate(false)
+        let confirm = window.confirm('Точно удалить?')
+        if (confirm) {
+            axios.delete(`http://localhost:4444/velos/${_id}`)
+                .then(res => console.log(res.data))
+        }
+    }
+
+    function submitHandlerForUpdate() {
+       const _id = localStorage.getItem('id')
+         axios.patch(`http://localhost:4444/velos/${_id}`,{
+             title: titleForUpdate,
+             price: priceForUpdate,
+             imageUrl: imageUrlForUpdate
+         }).then(resp=>console.log(resp.data))
+        localStorage.clear()
+        setUpdate(false)
+        setModalForUpdate(false)
+    }
+
+   async function updateVelo(_id) {
+       await axios.get(`http://localhost:4444/velos/${_id}`)
+            .then(resp=>{
+                setTitleForUpdate(resp.data.title)
+                setPriceForUpdate(resp.data.price)
+                setImageUrlForUpdate(resp.data.imageUrl)
+            })
+        setModalForUpdate(true)
+       localStorage.setItem('id', _id)
+    }
 
     function selectCategory(e) {
         const categories = document.querySelectorAll('#cat')
@@ -28,40 +83,83 @@ const AdminPanel = () => {
         })
     }
 
-    const [items, setItems] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:4444/velos')
-            .then(data => data.json())
-            // .then(data=>console.log(data))
-            .then(items => setItems(items))
-    }, [])
+        if (!update) {
+            fetch('http://localhost:4444/velos')
+                .then(data => data.json())
+                // .then(data=>console.log(data))
+                .then(items => setItems(items))
+        }
+        setUpdate(true)
+
+    }, [submitHandler])
 
 
     return (
         <div className={'relative'}>
-            {modal && (<div className={'h-[100vh] w-full fixed left-auto right-auto z-[11] flex justify-center items-center modal'}>
+            {modalForAdd && (<div
+                className={'h-[100vh] w-full fixed left-auto right-auto z-[11] flex justify-center items-center modal'}>
                 <form onClick={e => e.preventDefault()} className={'w-[300px] bg-white p-3'}>
                     <h2 className={'text-center p-2'}>Добавить велосипед</h2>
                     <label className={'p-2 text-sm text-black mt-2'}>
                         Название велосипеда
-                        <input className={'w-full p-2 outline-0 bg-blue-100 rounded text-black'} type="text"
+                        <input value={title} onChange={e => setTitle(e.target.value)}
+                               className={'w-full p-2 outline-0 bg-blue-100 rounded text-black'} type="text"
                                placeholder={'Название...'}/>
                     </label>
                     <label className={'p-2 text-sm text-black mt-2'}>
                         Цена
-                        <input className={'w-full p-2 outline-0 bg-blue-100 rounded text-black'} type="text"
+                        <input value={price} onChange={e => setPrice(e.target.value)}
+                               className={'w-full p-2 outline-0 bg-blue-100 rounded text-black'} type="text"
                                placeholder={'Цена...'}/>
                     </label>
                     <label className={'p-2 text-sm text-black mt-2'}>
                         Картинка
-                        <input className={'w-full p-2 outline-0 bg-blue-100 rounded text-black'} type="text"
-                               placeholder={'Картинка...'}/>
+                        <input value={imageUrl} onChange={e => setImageUrl(e.target.value)}
+                               className={'w-full p-2 outline-0 bg-blue-100 rounded text-black'} type="text"
+                               placeholder={'Url...'}/>
                     </label>
                     <div className={'flex justify-between mt-3 mb-1'}>
-                        <button className={'rounded bg-green-700 p-2 text-white text-xs'} type="submit">Добавить
+                        <button className={'rounded bg-green-700 p-2 text-white text-xs'} type="submit"
+                                onClick={submitHandler}>Добавить
                         </button>
-                        <button onClick={()=>setModal(false)} className={'rounded bg-red-700 p-2 text-white text-xs'}>Закрыть</button>
+                        <button onClick={() => setModalForAdd(false)}
+                                className={'rounded bg-red-700 p-2 text-white text-xs'}>Закрыть
+                        </button>
+                    </div>
+                </form>
+            </div>)}
+
+            {modalForUpdate && (<div
+                className={'h-[100vh] w-full fixed left-auto right-auto z-[11] flex justify-center items-center modal'}>
+                <form onClick={e => e.preventDefault()} className={'w-[300px] bg-white p-3'}>
+                    <h2 className={'text-center p-2'}>Обновить велосипед</h2>
+                    <label className={'p-2 text-sm text-black mt-2'}>
+                        Название велосипеда
+                        <input value={titleForUpdate} onChange={e => setTitleForUpdate(e.target.value)}
+                               className={'w-full p-2 outline-0 bg-blue-100 rounded text-black'} type="text"
+                               placeholder={'Название...'}/>
+                    </label>
+                    <label className={'p-2 text-sm text-black mt-2'}>
+                        Цена
+                        <input value={priceForUpdate} onChange={e => setPriceForUpdate(e.target.value)}
+                               className={'w-full p-2 outline-0 bg-blue-100 rounded text-black'} type="text"
+                               placeholder={'Цена...'}/>
+                    </label>
+                    <label className={'p-2 text-sm text-black mt-2'}>
+                        Картинка
+                        <input value={imageUrlForUpdate} onChange={e => setImageUrlForUpdate(e.target.value)}
+                               className={'w-full p-2 outline-0 bg-blue-100 rounded text-black'} type="text"
+                               placeholder={'Url...'}/>
+                    </label>
+                    <div className={'flex justify-between mt-3 mb-1'}>
+                        <button className={'rounded bg-green-700 p-2 text-white text-xs'} type="submit"
+                                onClick={submitHandlerForUpdate}>Обновить
+                        </button>
+                        <button onClick={() => setModalForUpdate(false)}
+                                className={'rounded bg-red-700 p-2 text-white text-xs'}>Закрыть
+                        </button>
                     </div>
                 </form>
             </div>)}
@@ -96,9 +194,12 @@ const AdminPanel = () => {
             </aside>
             <main className={'w-3/4 ml-[25%] p-4'}>
                 <section data-cat={'Велосипеды'} className={'flex flex-wrap gap-20'}>
-                    {items.map((item, i) => <ItemForAdmin key={i} {...item}/>)}
+                    {items.map((item) => <ItemForAdmin key={item._id} {...item} deleteVelo={() => deleteVelo(item._id)}
+                                                       updateVelo={() => updateVelo(item._id)}/>)}
                     <div className={'my-2 flex justify-center items-center w-full'}>
-                        <button onClick={()=>setModal(true)} className={'p-2 rounded bg-blue-300'}>Добавить велосипед</button>
+                        <button onClick={() => setModalForAdd(true)} className={'p-2 rounded bg-blue-300'}>Добавить
+                            велосипед
+                        </button>
                     </div>
                 </section>
                 <section data-cat={'Аксессуары'} className={'hidden flex-wrap gap-20'}>

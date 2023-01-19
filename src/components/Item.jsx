@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 
-const Item = ({title, price, imageUrl}) => {
+const Item = ({title, price, imageUrl, _id}) => {
     return (
         <div className="product-item__wrapper">
             <button className="product-item__favorite">
@@ -11,7 +11,7 @@ const Item = ({title, price, imageUrl}) => {
             </button>
             <a className="product-item__notify-link" href="#"> <span>Сообщить о поступлении</span>
             </a>
-            <Link className="product-item" to="/product">
+            <Link className="product-item" to={`/product/${_id}`}>
                 <p className="product-item__hover-text">посмотреть товар</p>
                 <img className="product-item__img" src={imageUrl} alt="prod"/>
                 <h4 className="product-item__title">{title}
