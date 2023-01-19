@@ -4,6 +4,15 @@ import Header from "../components/Header";
 import BuyWithThis from "../components/BuyWithThis";
 import {Link, useParams} from "react-router-dom";
 import axios from "axios";
+import '../assets/css/fonts.css'
+import '../assets/css/ion.rangeSlider.min.css'
+import '../assets/css/media.css'
+import '../assets/css/jquery.formstyler.theme.css'
+import '../assets/css/normalize.css'
+import '../assets/css/jquery.formstyler.css'
+import '../assets/css/jquery.rateyo.min.css'
+import '../assets/css/slick.css'
+import '../assets/css/style.css'
 
 const ProductPage = () => {
     const params = useParams()
