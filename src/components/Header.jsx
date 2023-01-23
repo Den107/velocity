@@ -92,35 +92,35 @@ const Header = () => {
                     </Link>
                 </li>
                 <li className="menu-mobile__item">
-                    <a className="menu-mobile__link" href="#">
+                    <Link className="menu-mobile__link" to="/catalog2">
                         <p>Аксессуары</p>
-                    </a>
+                    </Link>
                 </li>
                 <li className="menu-mobile__item">
-                    <a className="menu-mobile__link" href="catalog.html">
+                    <Link className="menu-mobile__link" to="/catalog3">
                         <p>Запчасти</p>
-                    </a>
+                    </Link>
                 </li>
                 <li className="menu-mobile__item">
-                    <a className="menu-mobile__link" href="#">
+                    <Link className="menu-mobile__link" to="/catalog4">
                         <p>Иструменты</p>
-                    </a>
+                    </Link>
                 </li>
                 <li className="menu-mobile__item">
-                    <a className="menu-mobile__link" href="#">
+                    <Link className="menu-mobile__link" to="/catalog5">
                         <p>Электроника</p>
-                    </a>
+                    </Link>
                 </li>
                 <li className="menu-mobile__item">
-                    <a className="menu-mobile__link" href="#">
+                    <Link className="menu-mobile__link" to="/catalog6">
                         <p>Экипировка</p>
-                    </a>
+                    </Link>
                 </li>
-                <li className="menu-mobile__item">
-                    <a className="menu-mobile__link" href="#">
-                        <p>Косметика</p>
-                    </a>
-                </li>
+                {/*<li className="menu-mobile__item">*/}
+                {/*    <Link className="menu-mobile__link" href="#">*/}
+                {/*        <p>Косметика</p>*/}
+                {/*    </Link>*/}
+                {/*</li>*/}
             </ul>
             <div className="menu__mobile-linewrapper">
                 <ul className="menu__mobile-line">
@@ -136,16 +136,16 @@ const Header = () => {
                         <ul className="menu-categories">
                             <li className="menu-categories__item"><Link className="menu-categories__link"
                                                                      to="/catalog">Велосипеды</Link></li>
-                            <li className="menu-categories__item"><a className="menu-categories__link"
-                                                                     href="#">Аксессуары</a></li>
-                            <li className="menu-categories__item"><a className="menu-categories__link"
-                                                                     href="#">Запчасти</a></li>
-                            <li className="menu-categories__item"><a className="menu-categories__link"
-                                                                     href="#">Иструменты</a></li>
-                            <li className="menu-categories__item"><a className="menu-categories__link"
-                                                                     href="#">Электроника</a></li>
-                            <li className="menu-categories__item"><a className="menu-categories__link"
-                                                                     href="#">Экипировка</a></li>
+                            <li className="menu-categories__item"><Link className="menu-categories__link"
+                                                                     to="/catalog2">Аксессуары</Link></li>
+                            <li className="menu-categories__item"><Link className="menu-categories__link"
+                                                                     to="/catalog3">Запчасти</Link></li>
+                            <li className="menu-categories__item"><Link className="menu-categories__link"
+                                                                     to="/catalog4">Иструменты</Link></li>
+                            <li className="menu-categories__item"><Link className="menu-categories__link"
+                                                                     to="/catalog5">Электроника</Link></li>
+                            <li className="menu-categories__item"><Link className="menu-categories__link"
+                                                                     to="/catalog6">Экипировка</Link></li>
                         </ul>
                     </div>
                 </div>
